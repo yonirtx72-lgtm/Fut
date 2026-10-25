@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07120e">
+<title>FÚTBOL // Match Day</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--bg:#07120e;--green:#b9ff55;--field:#12633d;--white:#f7fff9;--muted:#a6c1b2;--panel:#0d2119;--line:#294638}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#193e2c 0,transparent 48%),var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}.wrap{width:min(1050px,94%);margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}.logo{font:800 22px 'Barlow Condensed';letter-spacing:2px}.logo span{color:var(--green)}.live{font-size:11px;letter-spacing:1.5px;color:var(--green);border:1px solid #b9ff5544;border-radius:30px;padding:8px 11px}.hero{text-align:center;padding:34px 0 22px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--green);font-weight:700}.hero h1{font:900 clamp(46px,10vw,88px)/.9 'Barlow Condensed';margin:13px 0;letter-spacing:1px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);font-size:14px;line-height:1.7;max-width:520px;margin:14px auto}.scoreboard{background:linear-gradient(135deg,#102b20,#0b1c15);border:1px solid #34543e;border-radius:24px;padding:22px;margin:20px 0;box-shadow:0 20px 60px #0003}.scoretop{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;letter-spacing:1.5px}.match-label{color:var(--green)}.scoreline{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:25px 0}.team{text-align:center;min-width:0}.crest{width:68px;height:68px;margin:0 auto 10px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(145deg,#24543a,#142d21);border:1px solid #46714e;font-size:31px}.team-name{font:800 clamp(18px,4vw,27px) 'Barlow Condensed';text-transform:uppercase;letter-spacing:1px;overflow-wrap:anywhere}.players{font-size:12px;color:var(--muted);margin-top:5px}.score{font:900 clamp(48px,10vw,76px)/1 'Barlow Condensed';letter-spacing:3px;white-space:nowrap}.dash{color:var(--green);padding:0 5px}.timer{display:flex;align-items:center;justify-content:center;gap:12px;border-top:1px solid var(--line);padding-top:17px}.clock{font:800 35px 'Barlow Condensed';font-variant-numeric:tabular-nums}.clock small{font:600 11px 'DM Sans';color:var(--muted);letter-spacing:1px;display:block;text-align:center}.status{color:var(--green);font-size:11px;letter-spacing:1px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 32px}.panel{background:#0c1d15;border:1px solid var(--line);border-radius:20px;padding:20px}.panel h2{font:800 25px 'Barlow Condensed';letter-spacing:1px;margin:0 0 15px}.controls{display:flex;flex-wrap:wrap;gap:9px}.btn{border:1px solid #385a43;border-radius:11px;background:#142b1e;color:var(--white);padding:11px 14px;font-weight:700;font-size:12px;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:var(--green)}.btn.green{background:var(--green);color:#10200f;border-color:var(--green)}.btn.red{border-color:#774447;background:#301c1e;color:#ffb4b4}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.field input,.field select{width:100%;background:#07140e;border:1px solid #34523d;border-radius:10px;padding:11px;color:var(--white);outline:none}.field input:focus,.field select:focus{border-color:var(--green)}.events{display:flex;flex-direction:column;gap:9px;max-height:280px;overflow:auto}.event{display:flex;gap:10px;align-items:center;padding:11px;border:1px solid #294638;border-radius:12px;background:#0a1911;font-size:12px}.event-time{color:var(--green);font-weight:800;min-width:38px}.empty{color:var(--muted);font-size:13px;padding:14px 0}.foot{text-align:center;color:#779181;font-size:11px;padding:10px 0 28px}.note{color:var(--muted);font-size:12px;line-height:1.6;margin:12px 0 0}.mini-stat{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid var(--line);padding:8px 10px;border-radius:9px;font-size:11px;color:var(--muted)}.pill b{color:var(--white)}@media(max-width:650px){.layout{grid-template-columns:1fr}.scoreboard{padding:16px}.crest{width:55px;height:55px;font-size:26px}.scoreline{gap:4px}.team-name{font-size:18px}.score{letter-spacing:1px}.hero{padding-top:28px}.panel{padding:17px}.top{padding:17px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="logo">MATCH<span>DAY</span> ⚽</div>
+  <div class="live">● MODO PARTIDO</div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">TU CANCHA · TU PARTIDO</div>
+  <h1>EL JUEGO <span>COMIENZA</span></h1>
+  <p>Controla el marcador, los minutos, los jugadores y los eventos del partido en una sola pantalla.</p>
+</section>
+
+<section class="scoreboard">
+  <div class="scoretop"><span>PARTIDO AMISTOSO</span><span class="match-label" id="matchStatus">PREPARADO</span></div>
+  <div class="scoreline">
+    <div class="team">
+      <div class="crest">🟢</div>
+      <div class="team-name" id="homeNameDisplay">LOCAL</div>
+      <div class="players"><span id="homeCountDisplay">11</span> jugadores</div>
+    </div>
+    <div class="score"><span id="homeScore">0</span><span class="dash">:</span><span id="awayScore">0</span></div>
+    <div class="team">
+      <div class="crest">🔵</div>
+      <div class="team-name" id="awayNameDisplay">VISITANTE</div>
+      <div class="players"><span id="awayCountDisplay">11</span> jugadores</div>
+    </div>
+  </div>
+  <div class="timer">
+    <div class="clock"><span id="minuteDisplay">00</span>:<span id="secondDisplay">00</span><small>MINUTOS : SEGUNDOS</small></div>
+    <div class="status" id="halfDisplay">PRIMER TIEMPO</div>
+  </div>
+  <div class="mini-stat">
+    <span class="pill">⚽ Goles: <b id="goalTotal">0</b></span>
+    <span class="pill">🟥 Rojas: <b id="redTotal">0</b></span>
+    <span class="pill">🟨 Amarillas: <b id="yellowTotal">0</b></span>
+  </div>
+</section>
+
+<div class="layout">
+  <section class="panel">
+    <h2>⏱ CONTROL DEL PARTIDO</h2>
+    <div class="controls">
+      <button class="btn green" id="startBtn" onclick="startMatch()">▶ INICIAR</button>
+      <button class="btn" id="pauseBtn" onclick="pauseMatch()" disabled>Ⅱ PAUSAR</button>
+      <button class="btn" onclick="resetMatch()">↺ REINICIAR</button>
+      <button class="btn" onclick="nextHalf()">⇄ CAMBIAR TIEMPO</button>
+    </div>
+    <p class="note">El reloj avanza en tiempo real. El cambio de tiempo es manual para que puedas controlar el partido como quieras.</p>
+  </section>
+
+  <section class="panel">
+    <h2>⚙️ CONFIGURACIÓN</h2>
+    <div class="formrow">
+      <div class="field"><label for="homeName">Equipo local</label><input id="homeName" value="LOCAL" maxlength="18" onchange="updateNames()"></div>
+      <div class="field"><label for="awayName">Equipo visitante</label><input id="awayName" value="VISITANTE" maxlength="18" onchange="updateNames()"></div>
+    </div>
+    <div class="formrow">
+      <div class="field"><label for="halfLength">Duración de cada tiempo</label><select id="halfLength"><option value="45">45 minutos</option><option value="30">30 minutos</option><option value="20">20 minutos</option><option value="15">15 minutos</option><option value="10">10 minutos</option></select></div>
+      <div class="field"><label for="playerLimit">Jugadores por equipo</label><select id="playerLimit"><option value="5">5 jugadores</option><option value="7">7 jugadores</option><option value="11" selected>11 jugadores</option></select></div>
+    </div>
+    <button class="btn green" onclick="applySettings()">APLICAR CONFIGURACIÓN</button>
+  </section>
+
+  <section class="panel">
+    <h2>👥 JUGADORES</h2>
+    <div class="field" style="margin-bottom:12px">
+      <label for="teamSelect">Seleccionar equipo</label>
+      <select id="teamSelect" onchange="updatePlayerControls()">
+        <option value="home">Equipo local</option>
+        <option value="away">Equipo visitante</option>
+      </select>
+    </div>
+    <div class="controls">
+      <button class="btn green" onclick="changePlayers(1)">＋ Añadir jugador</button>
+      <button class="btn red" onclick="changePlayers(-1)">－ Quitar jugador</button>
+    </div>
+    <p class="note">El contador se actualiza en el marcador. Puedes reducir la cantidad por expulsiones o aumentarla para llevar el control de tu partido.</p>
+  </section>
+
+  <section class="panel">
+    <h2>📋 REGISTRAR EVENTO</h2>
+    <div class="formrow">
+      <div class="field"><label for="eventTeam">Equipo</label><select id="eventTeam"><option value="home">Local</option><option value="away">Visitante</option></select></div>
+      <div class="field"><label for="eventType">Evento</label><select id="eventType"><option value="goal">⚽ Gol</option><option value="yellow">🟨 Amarilla</option><option value="red">🟥 Roja</option><option value="change">🔄 Cambio</option><option value="note">📌 Nota</option></select></div>
+    </div>
+    <div class="field" style="margin-bottom:13px"><label for="playerName">Jugador o descripción (opcional)</label><input id="playerName" placeholder="Ej. Número 10"></div>
+    <div class="controls"><button class="btn green" onclick="registerEvent()">＋ REGISTRAR EVENTO</button></div>
+  </section>
+
+  <section class="panel" style="grid-column:1/-1">
+    <h2>📰 EVENTOS DEL PARTIDO</h2>
+    <div class="events" id="eventsList"><div class="empty">Todavía no hay eventos. ¡Inicia el partido y registra el primero!</div></div>
+    <div class="controls" style="margin-top:14px"><button class="btn" onclick="undoEvent()">↶ Deshacer último evento</button><button class="btn red" onclick="clearEvents()">Borrar eventos</button></div>
+  </section>
+</div>
+
+<footer class="foot">MATCHDAY · Marcador interactivo de fútbol · Guarda esta página como index.html</footer>
+</div>
+
+<script>
+let elapsedSeconds = 0;
+let running = false;
+let timer = null;
+let half = 1;
+let homePlayers = 11;
+let awayPlayers = 11;
+let homeGoals = 0;
+let awayGoals = 0;
+let yellowCards = 0;
+let redCards = 0;
+let events = [];
+
+const $ = id => document.getElementById(id);
+
+function updateNames() {
+  $('homeNameDisplay').textContent = $('homeName').value.trim() || 'LOCAL';
+  $('awayNameDisplay').textContent = $('awayName').value.trim() || 'VISITANTE';
+}
+
+function updateScoreboard() {
+  $('homeScore').textContent = homeGoals;
+  $('awayScore').textContent = awayGoals;
+  $('homeCountDisplay').textContent = homePlayers;
+  $('awayCountDisplay').textContent = awayPlayers;
+  $('goalTotal').textContent = homeGoals + awayGoals;
+  $('yellowTotal').textContent = yellowCards;
+  $('redTotal').textContent = redCards;
+  $('minuteDisplay').textContent = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+  $('secondDisplay').textContent = String(elapsedSeconds % 60).padStart(2, '0');
+  $('halfDisplay').textContent = half === 1 ? 'PRIMER TIEMPO' : half === 2 ? 'SEGUNDO TIEMPO' : 'TIEMPO EXTRA';
+}
+
+function startMatch() {
+  if (running) return;
+  running = true;
+  $('matchStatus').textContent = 'EN JUEGO';
+  $('startBtn').disabled = true;
+  $('pauseBtn').disabled = false;
+  timer = setInterval(() => {
+    elapsedSeconds++;
+    updateScoreboard();
+    const limit = Number($('halfLength').value) * 60;
+    if (elapsedSeconds >= limit) {
+      pauseMatch();
+      $('matchStatus').textContent = 'FIN DEL TIEMPO';
+      addEvent('⏱', 'Se alcanzó la duración configurada para este tiempo.');
+    }
+  }, 1000);
+}
+
+function pauseMatch() {
+  running = false;
+  clearInterval(timer);
+  timer = null;
+  $('startBtn').disabled = false;
+  $('pauseBtn').disabled = true;
+  $('matchStatus').textContent = 'PAUSADO';
+}
+
+function resetMatch() {
+  pauseMatch();
+  elapsedSeconds = 0;
+  half = 1;
+  homeGoals = 0;
+  awayGoals = 0;
+  yellowCards = 0;
+  redCards = 0;
+  homePlayers = Number($('playerLimit').value);
+  awayPlayers = Number($('playerLimit').value);
+  events = [];
+  $('matchStatus').textContent = 'PREPARADO';
+  renderEvents();
+  updateScoreboard();
+}
+
+function nextHalf() {
+  pauseMatch();
+  half = half === 1 ? 2 : 3;
+  elapsedSeconds = 0;
+  $('matchStatus').textContent = half === 3 ? 'TIEMPO EXTRA' : 'SEGUNDO TIEMPO';
+  updateScoreboard();
+}
+
+function applySettings() {
+  pauseMatch();
+  homePlayers = Number($('playerLimit').value);
+  awayPlayers = Number($('playerLimit').value);
+  updateNames();
+  updateScoreboard();
+}
+
+function updatePlayerControls() {
+  // El equipo seleccionado se consulta al pulsar los controles.
+}
+
+function changePlayers(amount) {
+  const team = $('teamSelect').value;
+  if (team === 'home') {
+    homePlayers = Math.max(0, Math.min(30, homePlayers + amount));
+    addEvent('👥', `${$('homeNameDisplay').textContent}: ${homePlayers} jugadores.`);
+  } else {
+    awayPlayers = Math.max(0, Math.min(30, awayPlayers + amount));
+    addEvent('👥', `${$('awayNameDisplay').textContent}: ${awayPlayers} jugadores.`);
+  }
+  updateScoreboard();
+}
+
+function registerEvent() {
+  const team = $('eventTeam').value;
+  const type = $('eventType').value;
+  const name = $('playerName').value.trim();
+  const teamName = team === 'home' ? $('homeNameDisplay').textContent : $('awayNameDisplay').textContent;
+  const minute = Math.floor(elapsedSeconds / 60) + "'";
+  let icon = '📌';
+  let description = '';
+
+  if (type === 'goal') {
+    icon = '⚽';
+    if (team === 'home') homeGoals++;
+    else awayGoals++;
+    description = `¡GOOOL de ${teamName}!${name ? ' Jugador: ' + name : ''}`;
+  } else if (type === 'yellow') {
+    icon = '🟨';
+    yellowCards++;
+    description = `Tarjeta amarilla para ${teamName}.${name ? ' Jugador: ' + name : ''}`;
+  } else if (type === 'red') {
+    icon = '🟥';
+    redCards++;
+    if (team === 'home') homePlayers = Math.max(0, homePlayers - 1);
+    else awayPlayers = Math.max(0, awayPlayers - 1);
+    description = `Tarjeta roja para ${teamName}.${name ? ' Jugador: ' + name : ''}`;
+  } else if (type === 'change') {
+    icon = '🔄';
+    description = `Cambio de jugadores en ${teamName}.${name ? ' Detalle: ' + name : ''}`;
+  } else {
+    description = `${teamName}: ${name || 'Nota del partido'}`;
+  }
+
+  addEvent(icon, `[${minute}] ${description}`);
+  $('playerName').value = '';
+  updateScoreboard();
+}
+
+function addEvent(icon, text) {
+  events.unshift({icon, text});
+  renderEvents();
+}
+
+function renderEvents() {
+  const list = $('eventsList');
+  if (!events.length) {
+    list.innerHTML = '<div class="empty">Todavía no hay eventos. ¡Inicia el partido y registra el primero!</div>';
+    return;
+  }
+  list.innerHTML = events.map(e =>
+    `<div class="event"><span>${e.icon}</span><span>${escapeHTML(e.text)}</span></div>`
+  ).join('');
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[char]);
+}
+
+function undoEvent() {
+  if (!events.length) return;
+  events.shift();
+  renderEvents();
+}
+
+function clearEvents() {
+  events = [];
+  renderEvents();
+}
+
+updateNames();
+updateScoreboard();
+</script>
+</body>
+</html>
